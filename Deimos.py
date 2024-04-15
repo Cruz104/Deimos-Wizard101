@@ -456,7 +456,7 @@ async def friend_teleport_sync(clients : list[wizwalker.Client], debug: bool):
 	for p in child_clients:
 		async with p.mouse_handler:
 			try:
-				await teleport_to_friend_from_list(client=p, icon_list=1, icon_index=50)
+				await teleport_to_friend_from_list(client=p, icon_list=1, icon_index=self.current_leader_client.wizard_name)
 			except Exception as e:
 				logger.error(e)
 				await asyncio.sleep(0)
